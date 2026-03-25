@@ -4,27 +4,27 @@ import { Search, Lightbulb, Rocket } from "lucide-react"
 const steps = [
   {
     number: "01",
-    title: "Анализ и стратегия",
-    description: "Глубоко погружаемся в ваши задачи, исследуем идеи и формируем стратегию для долгосрочного успеха.",
+    title: "Запись и приём",
+    description: "Выберите удобное время онлайн или по телефону. Мы подберём подходящего специалиста под ваш запрос.",
     icon: <Search className="w-8 h-8" />,
     mockup: "discovery",
-    gradient: "from-blue-500/20 to-blue-600/10",
+    gradient: "from-teal-500/20 to-teal-600/10",
   },
   {
     number: "02",
-    title: "Разработка и тесты",
-    description: "Создаем решения под ваши цели и тщательно тестируем их для максимальной надежности.",
+    title: "Консультация врача",
+    description: "Опытный врач проведёт осмотр, изучит историю болезни и поставит точный диагноз с рекомендациями.",
     icon: <Lightbulb className="w-8 h-8" />,
     mockup: "development",
-    gradient: "from-purple-500/20 to-purple-600/10",
+    gradient: "from-cyan-500/20 to-cyan-600/10",
   },
   {
     number: "03",
-    title: "Запуск и поддержка",
-    description: "Бесшовно внедряем решение и обеспечиваем его стабильную работу с постоянной поддержкой.",
+    title: "Лечение и контроль",
+    description: "Следуем плану лечения вместе с вами, отслеживаем динамику и корректируем курс при необходимости.",
     icon: <Rocket className="w-8 h-8" />,
     mockup: "launch",
-    gradient: "from-green-500/20 to-green-600/10",
+    gradient: "from-blue-500/20 to-blue-600/10",
   },
 ]
 
@@ -39,9 +39,9 @@ export default function HowWeWork() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Как мы работаем</h2>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Как это работает</h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Простой и эффективный подход к развитию вашего бренда на высшем уровне.
+            Простой и понятный путь от записи до выздоровления — без очередей и лишних шагов.
           </p>
         </motion.div>
 
@@ -135,19 +135,19 @@ export default function HowWeWork() {
                         <div className="space-y-2">
                           <div className="flex items-center space-x-2">
                             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                            <div className="text-xs text-gray-300">Безопасность</div>
+                            <div className="text-xs text-gray-300">Диагноз</div>
                           </div>
                           <div className="flex items-center space-x-2">
                             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                            <div className="text-xs text-gray-300">Эффективность</div>
+                            <div className="text-xs text-gray-300">Лечение</div>
                           </div>
                           <div className="flex items-center space-x-2">
                             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                            <div className="text-xs text-gray-300">Скорость</div>
+                            <div className="text-xs text-gray-300">Контроль</div>
                           </div>
                           <div className="flex items-center space-x-2">
-                            <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
-                            <div className="text-xs text-gray-300">Обновление...</div>
+                            <div className="w-3 h-3 bg-teal-500 rounded-full animate-pulse"></div>
+                            <div className="text-xs text-gray-300">Наблюдение...</div>
                           </div>
                         </div>
                       </div>

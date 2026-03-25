@@ -6,9 +6,9 @@ import { cn } from "@/lib/utils"
 
 export default function Hero() {
   const stats = [
-    { value: 500, suffix: "+", label: "Успешных кампаний" },
-    { value: 98, suffix: "%", label: "Довольных клиентов" },
-    { value: 1, suffix: " млрд+", label: "Выручка клиентов" },
+    { value: 15, suffix: "+", label: "Лет опыта" },
+    { value: 98, suffix: "%", label: "Довольных пациентов" },
+    { value: 10000, suffix: "+", label: "Консультаций проведено" },
   ]
 
   return (
@@ -43,10 +43,10 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 border border-white/30 rounded-full text-sm text-white font-medium backdrop-blur-sm"
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-teal-500/20 via-cyan-500/20 to-blue-500/20 border border-white/30 rounded-full text-sm text-white font-medium backdrop-blur-sm"
               >
                 <div className="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse"></div>
-                <span>Маркетинговое агентство полного цикла</span>
+                <span>Медицинский консультационный центр</span>
               </motion.div>
 
               <motion.h1
@@ -55,19 +55,19 @@ export default function Hero() {
                 transition={{ duration: 1, delay: 0.3 }}
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight"
               >
-                <span className="block text-white mb-2">МАРКЕТИНГОВОЕ</span>
-                <span className="block text-white mb-2">АГЕНТСТВО ДЛЯ</span>
+                <span className="block text-white mb-2">ЗДОРОВЬЕ ВАШЕЙ</span>
+                <span className="block text-white mb-2">СЕМЬИ — НАША</span>
                 <span
                   className={cn(
-                    "block mb-2 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent font-pacifico",
+                    "block mb-2 bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent font-pacifico",
                   )}
                   style={{
-                    textShadow: "0 0 40px rgba(147, 51, 234, 0.5)",
+                    textShadow: "0 0 40px rgba(20, 184, 166, 0.5)",
                   }}
                 >
-                  Бизнеса
+                  Забота
                 </span>
-                <span className="block text-gray-300">ЛЮБОГО МАСШТАБА</span>
+                <span className="block text-gray-300">КАЖДЫЙ ДЕНЬ</span>
               </motion.h1>
 
               <motion.p
@@ -76,8 +76,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto lg:mx-0"
               >
-                В Pulse Digital мы фокусируемся на анализе рыночного спроса, понимании поведения клиентов и реализации
-                стратегий, которые действительно работают. От SEO и SMM до контент-стратегии и email-маркетинга.
+                В «Центре здоровой семьи» работают опытные врачи-консультанты. Мы помогаем семьям принимать правильные решения о здоровье — от педиатрии и терапии до профилактики и комплексных обследований.
               </motion.p>
             </div>
 
@@ -90,7 +89,7 @@ export default function Hero() {
               <a href="#get-started">
                 <AnimatedButton variant="slim" className="bg-white text-black hover:bg-gray-100">
                   <span className="flex items-center">
-                    Начать
+                    Записаться на консультацию
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </span>
                 </AnimatedButton>
@@ -119,8 +118,8 @@ export default function Hero() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-white">Google Partner</p>
-                    <p className="text-xs text-gray-400">Сертификат</p>
+                    <p className="text-sm font-medium text-white">Минздрав РФ</p>
+                    <p className="text-xs text-gray-400">Лицензия</p>
                   </div>
                 </div>
 
@@ -133,7 +132,7 @@ export default function Hero() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-white">Аккредитация</p>
-                    <p className="text-xs text-gray-400">Рейтинг A+</p>
+                    <p className="text-xs text-gray-400">Медицинская</p>
                   </div>
                 </div>
 
@@ -145,7 +144,7 @@ export default function Hero() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-white">Проверено</p>
-                    <p className="text-xs text-gray-400">Надежный партнер</p>
+                    <p className="text-xs text-gray-400">Безопасность</p>
                   </div>
                 </div>
               </div>

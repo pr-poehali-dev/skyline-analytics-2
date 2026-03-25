@@ -13,11 +13,11 @@ export default function Navbar() {
         className="relative bg-gray-900/60 backdrop-blur-md border rounded-2xl shadow-lg overflow-hidden"
         animate={{
           borderColor: [
+            "rgba(20, 184, 166, 0.3)",
+            "rgba(6, 182, 212, 0.3)",
             "rgba(59, 130, 246, 0.3)",
-            "rgba(147, 51, 234, 0.3)",
-            "rgba(236, 72, 153, 0.3)",
             "rgba(34, 197, 94, 0.3)",
-            "rgba(59, 130, 246, 0.3)",
+            "rgba(20, 184, 166, 0.3)",
           ],
         }}
         transition={{
@@ -31,11 +31,11 @@ export default function Navbar() {
           className="absolute inset-0 rounded-2xl"
           animate={{
             boxShadow: [
+              "0 0 20px rgba(20, 184, 166, 0.2)",
+              "0 0 20px rgba(6, 182, 212, 0.2)",
               "0 0 20px rgba(59, 130, 246, 0.2)",
-              "0 0 20px rgba(147, 51, 234, 0.2)",
-              "0 0 20px rgba(236, 72, 153, 0.2)",
               "0 0 20px rgba(34, 197, 94, 0.2)",
-              "0 0 20px rgba(59, 130, 246, 0.2)",
+              "0 0 20px rgba(20, 184, 166, 0.2)",
             ],
           }}
           transition={{
@@ -49,8 +49,8 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <a href="/" className="flex items-center space-x-3">
-                <span className="text-xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  Pulse Digital
+                <span className="text-xl font-bold bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                  Центр здоровой семьи
                 </span>
               </a>
             </div>
@@ -60,11 +60,11 @@ export default function Navbar() {
                 <a href="#services" className="text-sm text-gray-300 hover:text-blue-400 transition-colors">
                   Услуги
                 </a>
-                <a href="#artists" className="text-sm text-gray-300 hover:text-purple-400 transition-colors">
-                  Клиенты
+                <a href="#artists" className="text-sm text-gray-300 hover:text-teal-400 transition-colors">
+                  Врачи
                 </a>
                 <a href="#success-stories" className="text-sm text-gray-300 hover:text-green-400 transition-colors">
-                  Кейсы
+                  О нас
                 </a>
                 <a href="#contact" className="text-sm text-gray-300 hover:text-orange-400 transition-colors">
                   Контакты
@@ -73,12 +73,9 @@ export default function Navbar() {
             </div>
 
             <div className="hidden md:flex items-center space-x-4">
-              <Button variant="ghost" className="text-sm text-gray-300 hover:text-white">
-                Войти
-              </Button>
               <a href="#get-started">
                 <AnimatedButton size="sm" className="bg-white text-black hover:bg-gray-100">
-                  Начать
+                  Записаться
                 </AnimatedButton>
               </a>
             </div>
@@ -98,18 +95,18 @@ export default function Navbar() {
               <a href="#services" className="block text-gray-300 hover:text-blue-400">
                 Услуги
               </a>
-              <a href="#artists" className="block text-gray-300 hover:text-purple-400">
-                Клиенты
+              <a href="#artists" className="block text-gray-300 hover:text-teal-400">
+                Врачи
               </a>
               <a href="#success-stories" className="block text-gray-300 hover:text-green-400">
-                Кейсы
+                О нас
               </a>
               <a href="#contact" className="block text-gray-300 hover:text-orange-400">
                 Контакты
               </a>
               <div className="pt-3 border-t border-gray-700">
                 <a href="#get-started" className="block">
-                  <AnimatedButton className="w-full bg-white text-black hover:bg-gray-100">Начать</AnimatedButton>
+                  <AnimatedButton className="w-full bg-white text-black hover:bg-gray-100">Записаться</AnimatedButton>
                 </a>
               </div>
             </div>

@@ -5,31 +5,31 @@ import { TrendingUp, Target, Briefcase, Palette, Home, BarChart3 } from "lucide-
 const businessTypes = [
   {
     id: "retail",
-    name: "Ритейл",
+    name: "Терапия",
     icon: <Briefcase className="w-6 h-6" />,
     multiplier: 3.2,
-    description: "E-commerce и магазины",
+    description: "Взрослые пациенты",
   },
   {
     id: "real-estate",
-    name: "Недвижимость",
+    name: "Педиатрия",
     icon: <Home className="w-6 h-6" />,
     multiplier: 4.1,
-    description: "Агенты и управление",
+    description: "Дети до 18 лет",
   },
   {
     id: "artist",
-    name: "Креатив",
+    name: "Онлайн",
     icon: <Palette className="w-6 h-6" />,
     multiplier: 2.8,
-    description: "Блогеры и артисты",
+    description: "Дистанционные консультации",
   },
   {
     id: "professional",
-    name: "B2B услуги",
+    name: "Комплексное",
     icon: <Target className="w-6 h-6" />,
     multiplier: 3.7,
-    description: "Консалтинг и сервисы",
+    description: "Для всей семьи",
   },
 ]
 
@@ -66,9 +66,9 @@ export default function ROICalculatorHome() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Рассчитайте ROI</h2>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Запишитесь онлайн</h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Узнайте, какую выручку вы можете получить с нашими маркетинговыми стратегиями
+            Выберите направление и удобный формат — мы подберём для вас подходящего специалиста
           </p>
         </motion.div>
 
@@ -93,7 +93,7 @@ export default function ROICalculatorHome() {
             <div className="space-y-8">
               {/* Business Type Selection */}
               <div>
-                <label className="block text-lg font-medium text-white mb-4">Выберите тип бизнеса</label>
+                <label className="block text-lg font-medium text-white mb-4">Выберите направление</label>
                 <div className="grid grid-cols-2 gap-3">
                   {businessTypes.map((business) => (
                     <motion.button
@@ -127,40 +127,40 @@ export default function ROICalculatorHome() {
 
               {/* Budget Slider */}
               <div>
-                <label className="block text-lg font-medium text-white mb-4">Месячный бюджет на маркетинг</label>
+                <label className="block text-lg font-medium text-white mb-4">Количество членов семьи</label>
                 <div className="relative">
                   <input
                     type="range"
-                    min="100000"
-                    max="2500000"
-                    step="50000"
-                    value={selectedBudget}
-                    onChange={(e) => setSelectedBudget(Number(e.target.value))}
+                    min="1"
+                    max="10"
+                    step="1"
+                    value={Math.round((selectedBudget - 100000) / (2500000 - 100000) * 9) + 1}
+                    onChange={(e) => setSelectedBudget(100000 + (Number(e.target.value) - 1) * ((2500000 - 100000) / 9))}
                     className="w-full h-3 bg-gray-700 rounded-lg appearance-none cursor-pointer"
                     style={{
-                      background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${((selectedBudget - 100000) / (2500000 - 100000)) * 100}%, #374151 ${((selectedBudget - 100000) / (2500000 - 100000)) * 100}%, #374151 100%)`,
+                      background: `linear-gradient(to right, #14b8a6 0%, #14b8a6 ${((selectedBudget - 100000) / (2500000 - 100000)) * 100}%, #374151 ${((selectedBudget - 100000) / (2500000 - 100000)) * 100}%, #374151 100%)`,
                     }}
                   />
                   <div className="flex justify-between text-sm text-gray-400 mt-2">
-                    <span>100 тыс.</span>
-                    <span>2.5 млн</span>
+                    <span>1 человек</span>
+                    <span>10 человек</span>
                   </div>
                 </div>
                 <div className="text-center mt-4">
-                  <span className="text-3xl font-bold text-white">{formatRub(selectedBudget)} &#8381;</span>
-                  <span className="text-gray-400 ml-2">в месяц</span>
+                  <span className="text-3xl font-bold text-white">{Math.round((selectedBudget - 100000) / (2500000 - 100000) * 9) + 1}</span>
+                  <span className="text-gray-400 ml-2">человек в семье</span>
                 </div>
               </div>
 
               {/* Data Disclaimer */}
               <div className="bg-gray-800/30 border border-gray-700/50 rounded-xl p-4">
                 <div className="flex items-center space-x-3 mb-2">
-                  <BarChart3 className="w-5 h-5 text-blue-400" />
-                  <span className="text-sm font-medium text-white">На основе реальных данных</span>
+                  <BarChart3 className="w-5 h-5 text-teal-400" />
+                  <span className="text-sm font-medium text-white">Индивидуальный подход</span>
                 </div>
                 <p className="text-xs text-gray-400 leading-relaxed">
-                  Прогнозы основаны на реальных показателях наших клиентов из аналогичных
-                  отраслей и бюджетных категорий. Индивидуальные результаты могут отличаться.
+                  Мы подбираем программу наблюдения под состав и потребности каждой семьи.
+                  После записи врач проведёт бесплатный первичный осмотр.
                 </p>
               </div>
             </div>
@@ -211,37 +211,37 @@ export default function ROICalculatorHome() {
                     >
                       {Math.round((calculateROI(selectedBudget) / selectedBudget) * 100)}%
                     </motion.div>
-                    <div className="text-gray-400 text-sm">ROI</div>
+                    <div className="text-gray-400 text-sm">Подходит</div>
                   </div>
                 </div>
               </div>
 
-              {/* Revenue Cards */}
+              {/* Info Cards */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-gray-800/50 rounded-2xl p-6 border border-gray-700/50 text-center">
-                  <div className="w-8 h-8 text-green-400 mx-auto mb-2 flex items-center justify-center text-2xl font-bold">&#8381;</div>
+                  <div className="w-8 h-8 text-teal-400 mx-auto mb-2 flex items-center justify-center text-2xl">🩺</div>
                   <motion.div
                     key={`monthly-${selectedBudget}-${selectedBusiness}`}
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     className="text-2xl font-bold text-white mb-1"
                   >
-                    {formatRub(calculateMonthlyRevenue(selectedBudget))}
+                    {Math.round((selectedBudget - 100000) / (2500000 - 100000) * 9) + 1} чел.
                   </motion.div>
-                  <div className="text-gray-400 text-sm">Выручка/мес</div>
+                  <div className="text-gray-400 text-sm">Пациентов в семье</div>
                 </div>
 
                 <div className="bg-gray-800/50 rounded-2xl p-6 border border-gray-700/50 text-center">
-                  <TrendingUp className="w-8 h-8 text-blue-400 mx-auto mb-2" />
+                  <TrendingUp className="w-8 h-8 text-teal-400 mx-auto mb-2" />
                   <motion.div
                     key={`annual-${selectedBudget}-${selectedBusiness}`}
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     className="text-2xl font-bold text-white mb-1"
                   >
-                    {formatRub(calculateROI(selectedBudget))}
+                    от 1 дня
                   </motion.div>
-                  <div className="text-gray-400 text-sm">Выручка/год</div>
+                  <div className="text-gray-400 text-sm">Ожидание результата</div>
                 </div>
               </div>
             </div>
